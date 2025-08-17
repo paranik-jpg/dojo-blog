@@ -4,12 +4,12 @@ import useFetch from './useFetch';
 const BlogDetails = () => {
   const { id } = useParams();
   // useFetch is called with url of db.json and it is returning a object
-  const { data: blog, isPending, error } = useFetch('/api/blogs' + id);
+  const { data: blog, isPending, error } = useFetch('/api/blogs/' + id);
   const navigate = useNavigate();
 
   const handleClick = () => {
     // Fetching the url of db.json
-    fetch('/api/blogs' + blog.id, {
+    fetch('/api/blogs/' + blog.id, {
       method: 'DELETE'
     })
       .then(() => {
