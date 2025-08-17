@@ -1,11 +1,4 @@
 { 
-  "_comment": [
-    { "what": "to use this file as a mock REST API, do the following in terminal while in the root directory",
-      "Step 1": "Run 'npm install -g json-server'",
-      "Step 2": "Then run 'json-server --watch db.json --port 5000'"
-    }
-  ]
-    ,
   "blogs": [
     {
       "id": "6967",
