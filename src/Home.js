@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 
 const Home = () => {
     // useFetch is called with url of db.json and it is returning a object
-    const { data: blogs, isPending, error } = useFetch('http://localhost:5000/blogs') 
+    const { data: blogs, isPending, error } = useFetch('/api/blogs') 
  
     return ( 
         <div className="home">
