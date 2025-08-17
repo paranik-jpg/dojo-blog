@@ -1,72 +1,110 @@
-# Getting Started with Create React App
+Dojo Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple blog application built using React, React Router, and json-server for local REST API simulation.
+Features
 
-## Available Scripts
+    List blog posts
 
-In the project directory, you can run:
+    View details for each post
 
-### `npm start`
+    Create a new blog post
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Delete a blog post
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Custom 404 (Not Found) page
 
-### `npm test`
+    Responsive, clean UI with Quicksand font and custom styles
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Getting Started
+Prerequisites
 
-### `npm run build`
+    Node.js (v16+ recommended)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Clone the repository:
 
-### `npm run eject`
+bash
+git clone <your-repo-url>
+cd dojo-blog
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    bash
+    npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Running the App in Development
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project uses two servers: one for the React app, and one for the mock API.
+1. Start the API Server (json-server)
 
-## Learn More
+bash
+npx json-server --watch db.json --port 8000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    This will make your blogs data available at http://localhost:8000/blogs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Start the React Development Server
 
-### Code Splitting
+In another terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+bash
+npm start
 
-### Analyzing the Bundle Size
+    By default, this runs on http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Configure API endpoint (Optional)
 
-### Making a Progressive Web App
+If needed, update your API endpoints in useFetch.js and other fetches from /api/blogs to match your backend setup (http://localhost:8000/blogs if using json-server directly).
+Building for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+bash
+npm run build
 
-### Advanced Configuration
+Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    src/
 
-### Deployment
+        App.js – Main app with routing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+        Navbar.js – Top navigation bar
 
-### `npm run build` fails to minify
+        Home.js – Homepage listing blogs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# dojo-blog
-1c6bc9a7683958bf6021dfc54c7ff0f07571f8c6
+        BlogList.js – Blog listing component
+
+        BlogDetails.js – Single blog page with delete feature
+
+        Create.js – Form to create a new blog post
+
+        NotFound.js – Custom 404 page for unmatched routes
+
+        useFetch.js – Custom React Hook for fetching data
+
+        index.js – React entrypoint
+
+        index.css – Main CSS styles
+
+    db.json – Local database for blogs (used by json-server)
+
+    vercel.json, server.js – For deployment on Vercel with API route rewriting
+
+Customization
+
+    Logos/Icons: Includes React-like logos (favicon.jpg, logo192.jpg, logo512.jpg) in the public/ folder and referenced in manifest.json.
+
+    API Mock: Easily replace json-server with any API – just change fetch URLs.
+
+Deployment (Vercel)
+
+The included vercel.json and server configuration let you deploy this project as a serverless React app with an API backend. The API endpoints will be available under /api/blogs.
+Scripts
+
+    npm start – Runs the React development server
+
+    npm run build – Builds the app for production
+
+    npm test – Runs tests (if any)
+
+    npm run eject – Use with caution: ejects from Create React App
