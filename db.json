@@ -1,16 +1,9 @@
-{ 
+{
   "blogs": [
-    {
-      "id": "6967",
-      "title": "bvjebvbvfbv",
-      "body": "vbdfv dfjbgd vdf vdnn,s vkjds",
-      "author": "yoshi"
-    },
-    {
-      "id": "e9b7",
-      "title": "vvvvvvvvvvvvvvvvv",
-      "body": "sffffffffffff",
-      "author": "mario"
-    }
+    { "id": 1, "title": "bvjebvbvfbv", "author": "yoshi" },
+    { "id": 2, "title": "vvvvvvvvvvvvvvvv", "author": "mario" },
+    { "id": 3, "title": "hfjf", "author": "mario" },
+    { "id": 4, "title": "n", "author": "mario" }
   ]
 }
+
